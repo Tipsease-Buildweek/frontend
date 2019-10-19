@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import WorkersCard from './WorkersCard';
-import axios from 'axios';
-import styled from 'styled-components'
-import data from '../data.js'
 
+import axios from 'axios';
+import styled from 'styled-components';
+import data from '../data.js';
+import WorkersCard from './WorkersCard';
 const Container = styled.div`
 background-color:lightcyan;
 `
@@ -28,6 +28,7 @@ margin-top:4%
 padding:10px;
 
 `
+
 const PageHeader = styled.h1`
 color:darkblue;
 font-size:3rem;
@@ -87,11 +88,6 @@ export default function WorkersList() {
         onChange={searchOnChange}
        
       />
-      
-
-      
-      
-      
       </SearchName>
       </Header>
       <ListCards>      
