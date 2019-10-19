@@ -78,7 +78,7 @@ export default function WorkersList() {
     
       <SearchName>
       
-      <span><i class="fa fa-search"></i></span>
+      <span><i className="fa fa-search"></i></span>
       
       <input className="inputSearch"
         
