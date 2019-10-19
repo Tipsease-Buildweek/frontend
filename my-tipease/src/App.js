@@ -3,7 +3,7 @@ import { UserSignup } from "./Components/User/UserSignup";
 import './App.css';
 import WorkerDetail from './Components/WorkersDetail';
 // import { Route } from "react-router-dom";
-import { Nav } from './Components/NavLink';
+import Nav from './Components/NavLink';
 
 
 function App() {
