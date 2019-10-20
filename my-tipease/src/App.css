@@ -1,22 +1,29 @@
+body {
+  box-sizing: border-box;
+}
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
+.inputSearch {
+  height:22px;
+  
+}
+.inputSearch::placeholder { /* Firefox, Chrome, Opera */ 
+  color: blue; 
+  opacity:0.5;
+  
+  
+  
+} 
 
-.App-logo {
-  height: 40vmin;
-}
+.inputSearch:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
+  color: blue; 
+  opacity:0.5;
+} 
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+.inputSearch::-ms-input-placeholder { /* Microsoft Edge */ 
+  color: blue; 
+  opacity:0.5;
 
-.App-link {
-  color: #09d3ac;
-}
+} 
+  

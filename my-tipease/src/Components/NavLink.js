@@ -5,6 +5,7 @@ const Nav = () => {
   return (
     <div>
       <div className="Nav">
+      <div><Link to="/WorkersList">Employees HomePage</Link></div>
       <div><Link to="/WorkersDetail">Home</Link></div>
       <div><Link to="/UserSignup">Sign Up</Link></div>
         <Link to="/User">Login</Link>
@@ -14,3 +15,4 @@ const Nav = () => {
 };
 
 export default Nav;
+
