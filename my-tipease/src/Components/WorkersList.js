@@ -21,9 +21,6 @@ margin: 2% auto;
 const SearchName = styled.div`
 width: 180px;
 height: 28px;
-background-color: lightgrey;
-color: blue;
-
 margin-top:4%
 padding:10px;
 
@@ -78,7 +75,7 @@ export default function WorkersList() {
     
       <SearchName>
       
-      <span><i className="fa fa-search"></i></span>
+      {/* <span><i className="fa fa-search"></i></span> */}
       
       <input className="inputSearch"
         
