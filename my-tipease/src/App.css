@@ -1,29 +1,29 @@
 body {
   box-sizing: border-box;
 }
+
 .App {
   /* text-align: center; */
 }
+
 .inputSearch {
-  height:22px;
-  
+  height: 22px;
 }
-.inputSearch::placeholder { /* Firefox, Chrome, Opera */ 
-  color: blue; 
-  opacity:0.5;
-  
-  
-  
-} 
 
-.inputSearch:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
-  color: blue; 
-  opacity:0.5;
-} 
+.inputSearch::placeholder {
+  /* Firefox, Chrome, Opera */
+  color: blue;
+  opacity: 0.5;
+}
 
-.inputSearch::-ms-input-placeholder { /* Microsoft Edge */ 
-  color: blue; 
-  opacity:0.5;
+.inputSearch:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: blue;
+  opacity: 0.5;
+}
 
-} 
-  
+.inputSearch::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: blue;
+  opacity: 0.5;
+}
