@@ -9,10 +9,10 @@ const Nav = () => {
       <div><Link to="/WorkersDetail">Home</Link></div>
       <div><Link to="/UserSignup">Sign Up</Link></div>
         <Link to="/User">Login</Link>
-
       </div>
     </div>
   );
 };
 
 export default Nav;
+
