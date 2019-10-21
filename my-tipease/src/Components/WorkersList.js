@@ -75,11 +75,12 @@ export default function WorkersList() {
     worker.fullName.toLowerCase().indexOf(workerSearch.toLowerCase()) !== -1)
   
 
+  
 
   return (
     <Container>
     <Header>
-    <PageHeader>Meet Our Employees</PageHeader>
+    <PageHeader className="logo-heading">Meet Our Employees</PageHeader>
     
       <SearchName>
       
