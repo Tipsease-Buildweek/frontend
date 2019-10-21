@@ -1,10 +1,10 @@
 import React from "react";
+import Image from 'styled-components';
 import {
   CardWrapper,
   CardHeader,
   CardHeading,
   CardBody,
-  CardIcon,
   CardFieldset,
   CardOptionsItem,
   CardOptions,
@@ -19,23 +19,28 @@ function WorkersDetail() {
       <CardWrapper>
         <CardHeader>
           <CardHeading>Get To Know 'Kayla'</CardHeading>
+          {/* <Image src = 'https://imgur.com/0MayGBG' /> */}
         </CardHeader>
-
-        <CardBody>
-        <CardFieldset>
-          <CardIcon>PHOTO</CardIcon>
+           
+        <CardBody>  
+          <CardFieldset>
+          <CardOptionsNote>Rating:</CardOptionsNote>
           </CardFieldset>
 
           <CardFieldset>
-          <CardOptionsNote>Tenure</CardOptionsNote>
+          <CardOptionsNote>Tenure:</CardOptionsNote>
           </CardFieldset>
 
           <CardFieldset>
-          <CardOptionsNote>Role</CardOptionsNote>
+          <CardOptionsNote>Role:</CardOptionsNote>
           </CardFieldset>
 
           <CardFieldset>
-          <CardOptionsNote>Tagline</CardOptionsNote>
+          <CardOptionsNote>Tagline:</CardOptionsNote>
+          </CardFieldset>
+
+          <CardFieldset>
+          <CardOptionsNote>Bio:</CardOptionsNote>
           </CardFieldset>
 
           <CardFieldset>
