@@ -11,3 +11,45 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.profile{
+  height: 400px;
+  width: 400px;
+}
+
+.negative{
+    background-color: #e64944;
+    border: 1px solid white;
+    color: white;
+    font-size: 16px;
+    padding: 6px 14px;
+    border-radius: 10px;
+  
+}
+
+.positive{
+  background-color: green;
+  border: 1px solid white;
+  color: white;
+  font-size: 16px;
+  padding: 6px 14px;
+  border-radius: 10px;
+  margin-right: 20px; 
+}
+
+.workerDetail{
+background-color:rgb(177, 221, 171) ;
+}
+
+.Card.Content{
+  display: inline-block;
+}
+
+.tip{
+  background-color: green;
+  border: 1px solid white;
+  color: white;
+  font-size: 16px;
+  padding: 6px 14px;
+  border-radius: 10px;
+}

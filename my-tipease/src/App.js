@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import WorkerDetail from './Components/WorkersDetail';
+import WorkerDetail from './Worker/WorkerDetail';
 
 function App() {
   return (
