@@ -8,7 +8,7 @@ import {
   CardOptionsNote,
   CardButton,
 
-} from "./Card";
+} from "./WorkerList";
 
 function WorkerDetail() {
   return (
