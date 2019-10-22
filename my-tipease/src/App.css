@@ -9,6 +9,7 @@ body {
 .inputSearch {
   height: 22px;
 }
+
 .inputSearch::placeholder {
   /* Firefox, Chrome, Opera */
   color: blue;
@@ -45,4 +46,4 @@ body {
   background-position: 1px 1px;
   border-radius: 15px;
   border: 2px solid darkblue;
-}
+

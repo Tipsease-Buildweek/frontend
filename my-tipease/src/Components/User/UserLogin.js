@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { axiosWithAuth } from "../../Utils/axiosWithAuth";
+import { Link } from "react-router-dom";
 import {
     CardWrapper,
     CardHeader,
@@ -15,46 +16,18 @@ import {
 } from "./UserCard";
 import '../../App.css';
 
-/*
-class Login extends React.Component {
-    state = {
-        credentials: {
-            username: "",
-            password: ""
-        }
-    }
-    handleChange = e => {
-        this.setState({
-            credentials: {
-                ...this.state.credentials,
-                [e.target.name]: e.target.value
-            }
-        });
-    };
 
-    login = e => {
-        e.preventDefault();
-        axiosWithAuth()
-            .post("/auth/user/login", this.state.credentials)
-            .then(res => {
-                console.log(res)
-                this.props.setLogin
-            })
-
-    }
-
-}
-*/
 
 const UserLogin = (props) => {
     const [credentials, setCredentials] = useState({});
+
     const login = e => {
         e.preventDefault();
         axiosWithAuth().post("/auth/users/login", credentials)
             .then(res => {
                 console.log("login res: ", res)
                 localStorage.setItem('token', res.data.token);
-                props.history.push('/WorkersDetail');
+                props.history.push('/WorkersList');
             })
     }
     const handleChange = e => {
@@ -133,6 +106,17 @@ const UserLogin = (props) => {
 
                         <CardFieldset>
                             <CardButton type="submit">Log in </CardButton>
+                        </CardFieldset>
+                        <CardFieldset>
+                            <CardButton onClick={() => {
+                                setCredentials(false)
+                                localStorage.removeItem("token");
+                            }}>Logout</CardButton>
+                        </CardFieldset>
+                        <CardFieldset>
+                            <CardLink>
+                                <Link to="/UserSignup">Don't have an account yet?</Link>
+                            </CardLink>
                         </CardFieldset>
                     </CardBody>
                 </CardWrapper>
