@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 
 import axios from 'axios';
-import styled from 'styled-components';
+import styled,{keyframes} from 'styled-components';
 import data from '../data.js';
 import WorkersCard from './WorkersCard';
+
 
 const Container = styled.div`
 background-color:lightcyan;
@@ -27,17 +28,25 @@ padding:10px;
 
 `
 
-
+const animationName = keyframes`
+0%{		color: red;	}
+49%{	color: green;	}
+50%{	color: yello;	}
+99%{	color:white;	}
+100%{	color: pink;	}
+  
+`
 
 const PageHeader = styled.h1`
 
 color:lightgray;
 font-size:3rem;
 text-align:left;
-
+animation: ${animationName} 1s infinite;
 text-shadow: 10px 3px 3px navy,
                 3px 3px 3px navy, 
                 3px 3px 3px  navy;
+                
 `    
     
 const Header = styled.div`
@@ -45,6 +54,8 @@ display:flex;
 justify-content:space-evenly;
 
 `
+
+
 
     
     
@@ -80,7 +91,7 @@ export default function WorkersList() {
   return (
     <Container>
     <Header>
-    <PageHeader className="logo-heading">Meet Our Employees</PageHeader>
+    <PageHeader>Meet Our Employees</PageHeader>
     
       <SearchName>
       
@@ -98,7 +109,10 @@ export default function WorkersList() {
       </Header>
       <ListCards>      
         {filteredList.map((worker) => 
-           <WorkersCard worker={worker} key={worker.id}/>)}
+          
+           <WorkersCard worker={worker} key={worker.id}/>
+           
+           )}
         
       </ListCards>
     
