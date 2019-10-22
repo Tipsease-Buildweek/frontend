@@ -4,6 +4,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 import data from '../data.js';
 import WorkersCard from './WorkersCard';
+
 const Container = styled.div`
 background-color:lightcyan;
 `
@@ -21,18 +22,22 @@ margin: 2% auto;
 const SearchName = styled.div`
 width: 180px;
 height: 28px;
-background-color: lightgrey;
-color: blue;
-
 margin-top:4%
 padding:10px;
 
 `
 
+
+
 const PageHeader = styled.h1`
-color:darkblue;
+
+color:lightgray;
 font-size:3rem;
 text-align:left;
+
+text-shadow: 10px 3px 3px navy,
+                3px 3px 3px navy, 
+                3px 3px 3px  navy;
 `    
     
 const Header = styled.div`
@@ -70,15 +75,16 @@ export default function WorkersList() {
     worker.fullName.toLowerCase().indexOf(workerSearch.toLowerCase()) !== -1)
   
 
+  
 
   return (
     <Container>
     <Header>
-    <PageHeader>Meet Our Employees</PageHeader>
+    <PageHeader className="logo-heading">Meet Our Employees</PageHeader>
     
       <SearchName>
       
-      <span><i className="fa fa-search"></i></span>
+      {/* <span><i className="fa fa-search"></i></span> */}
       
       <input className="inputSearch"
         
