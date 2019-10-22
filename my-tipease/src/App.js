@@ -1,7 +1,5 @@
 import React from 'react';
 import './App.css';
-// import WorkersDetail from './Components/WorkersDetail';
-import Nav from './Components/NavLink';
 import WorkersList from './Components/WorkersList';
 import WorkersCard from './Components/WorkersCard';
 import { UserSignup } from "./Components/User/UserSignup";
