@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { axiosWithAuth } from "../../Utils/axiosWithAuth";
+import { Link } from "react-router-dom";
 import {
     CardWrapper,
     CardHeader,
@@ -32,13 +33,9 @@ export const UserSignup = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-    }
-
-
-    useEffect(() => {
 
         axiosWithAuth()
-            .post("/auth/users/register")
+            .post("/auth/users/register", user)
             .then(res => {
                 console.log("Add User:", res)
                 setUser({
@@ -54,7 +51,8 @@ export const UserSignup = () => {
             .catch(err => {
                 console.log(err)
             });
-    })
+    }
+
 
     return (
         <div>
@@ -98,9 +96,9 @@ export const UserSignup = () => {
                         <CardFieldset>
                             <CardInput
                                 placeholder="Username"
-                                name="UserName"
+                                name="username"
                                 type="text"
-                                value={user.UserName}
+                                value={user.username}
                                 onChange={handleChange}
                                 required />
                         </CardFieldset>
@@ -125,11 +123,13 @@ export const UserSignup = () => {
                         </CardFieldset>
 
                         <CardFieldset>
-                            <CardButton type="button">Sign Up</CardButton>
+                            <CardButton type="submit">Sign Up</CardButton>
                         </CardFieldset>
 
                         <CardFieldset>
-                            <CardLink>I already have an account</CardLink>
+                            <CardLink>
+                                <Link to="/UserLogin">I already have an account</Link>
+                            </CardLink>
                         </CardFieldset>
                     </CardBody>
                 </CardWrapper>
