@@ -15,7 +15,9 @@ const TipRoutes = () => {
             <Route path="/UserSignup" component={UserSignup} />
             <PrivateRoute path="/WorkersList" component={WorkersList} />
             <PrivateRoute path="/WorkersCard" component={WorkersCard} />
-            <PrivateRoute path="/WorkersDetail" component={WorkersDetail} />
+            {/* <PrivateRoute path="/WorkersDetail" component={WorkersDetail} /> */}
+            <PrivateRoute path="/WorkersDetail/:id" component={WorkersDetail} />
+            
         </div>
     )
 }
