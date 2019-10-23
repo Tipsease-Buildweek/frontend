@@ -12,9 +12,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-.burger-menu,
-.burger-menu.open {
+/*HAMBURGER ICON*/
+.burger-menu {
   display: inline-block;
   cursor: pointer;
   position: fixed;
@@ -26,6 +25,18 @@ code {
   border-radius: 25px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
+/* .burger-menu.open {
+  display: inline-block;
+  cursor: pointer;
+  position: fixed;
+  right: 20px;
+  bottom: 40px;
+  z-index: 9999;
+  background: #fff;
+  padding: 10px;
+  border-radius: 25px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+} */
 
 .burger-menu .bar1,
 .bar2,
@@ -60,7 +71,7 @@ code {
   padding: 0px;
 }
 .menu ul {
-  position: relative;
+  /* position: relative; */
   top: 0px;
   font-size: 24px;
   padding: 0px;
@@ -70,7 +81,9 @@ code {
   margin: 10px 0px;
   padding: 0;
   cursor: pointer;
+  text-decoration: none;
 }
 .menu li:hover {
   color: #ff0000;
+  text-decoration: none;
 }
