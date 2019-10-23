@@ -11,9 +11,9 @@ import TipRoutes from "./Components/Routes";
 import UserLogin from "./Components/User/UserLogin";
 import { render } from "react-dom";
 import Popup from "reactjs-popup";
-import Hello from "./Components/Hello";
-import BurgerIcon from "./Components/BurgerIcon";
-import Menu from "./Components/Menu";
+import Hello from "./Components/Nav/Hello";
+import BurgerIcon from "./Components/Nav/BurgerIcon";
+import Menu from "./Components/Nav/Menu";
 import "./index.css";
 
 const styles = {
