@@ -2,13 +2,12 @@ body {
   box-sizing: border-box;
 }
 
-.App {
-  /* text-align: center; */
-}
+
 
 .inputSearch {
   height: 22px;
 }
+
 .inputSearch::placeholder {
   /* Firefox, Chrome, Opera */
   color: blue;
@@ -27,6 +26,13 @@ body {
   opacity: 0.5;
 }
 
+  
+  
+  
+  .workersCard  {
+    text-decoration: none;
+    
+  }
 .inputSearch::-ms-input-placeholder {
   /* Microsoft Edge */
   color: blue;
