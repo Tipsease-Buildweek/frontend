@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-import axios from 'axios';
+import {axiosWithAuth} from '../Utils/axiosWithAuth';
 import styled,{keyframes} from 'styled-components';
-import data from '../data.js';
+
 import WorkersCard from './WorkersCard';
 
 
@@ -66,13 +66,13 @@ export default function WorkersList() {
   const [workerSearch, setWorkerSearch] = useState('');
 
   useEffect(() => {
-    // axios.get('https://build-tipsease.herokuapp.com/serviceWorkers')
-    //   .then(res =>{
-        
-    //     setWorkerList(res.data.results)
-    //   })
-    //   .catch(err => console.log('Error: ', err));
-     setWorkerList(data);
+    axiosWithAuth().get('/serviceWorkers')
+      .then(res =>{
+        console.log(res);
+        setWorkerList(res.data)
+      })
+      .catch(err => console.log('Error: ', err));
+    
   }, []);
 
   if (!workerList) {
