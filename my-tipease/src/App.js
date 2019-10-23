@@ -28,6 +28,9 @@ const contentStyle = {
 };
 
 function App() {
+  function LogOut() {
+    localStorage.removeItem("token");
+  }
   return (
     <div className="App">
       <Popup
