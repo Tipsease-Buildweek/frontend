@@ -2,8 +2,6 @@ import React from "react";
 import styled from 'styled-components'
 import {NavLink } from "react-router-dom";
 
-
-
 export default function WorkersCard(props) {
   const {fullName,photoUrl,serviceType,id} = props.worker
 
@@ -17,7 +15,6 @@ border:1px solid blue;
 background-image: url(${photoUrl});
 background-repeat: no-repeat;
 background-size: cover;
-
 `;
 
 const DisplayText = styled.div`
@@ -26,7 +23,7 @@ margin-top: 200px;
 text-align:left;  
 line-height:1.5rem;
 padding-left:5%;
-`
+`;
   
   return (
     
