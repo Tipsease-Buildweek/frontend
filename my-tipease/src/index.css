@@ -12,8 +12,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+/*HAMBURGER ICON*/
+.burger-menu {
+  display: inline-block;
+  cursor: pointer;
+  position: fixed;
+  right: 20px;
+  left: 0;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  bottom: 40px;
+  z-index: 1;
+  background: transparent;
+  padding: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
 
-.burger-menu,
+.open {
+  background: #e5195f !important;
+}
+
 .burger-menu.open {
   display: inline-block;
   cursor: pointer;
@@ -23,7 +42,6 @@ code {
   z-index: 9999;
   background: #fff;
   padding: 10px;
-  border-radius: 25px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -60,7 +78,7 @@ code {
   padding: 0px;
 }
 .menu ul {
-  position: relative;
+  /* position: relative; */
   top: 0px;
   font-size: 24px;
   padding: 0px;
@@ -70,7 +88,9 @@ code {
   margin: 10px 0px;
   padding: 0;
   cursor: pointer;
+  text-decoration: none;
 }
 .menu li:hover {
   color: #ff0000;
+  
 }
