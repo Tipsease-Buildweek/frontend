@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { axiosWithAuth } from "../../Utils/axiosWithAuth";
 import { Link } from "react-router-dom";
+import TipRoutes from "../../Components/Routes";
 import {
     CardWrapper,
     CardHeader,
@@ -16,13 +17,14 @@ import {
 } from "./UserCard";
 
 
-export const UserSignup = () => {
+export const UserSignup = (props) => {
     const [user, setUser] = useState({
         fullName: "",
         password: "",
         photoUrl: "",
         username: ""
     })
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleChange = e => {
         setUser({
@@ -33,6 +35,7 @@ export const UserSignup = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
+        setIsLoading(true);
 
         axiosWithAuth()
             .post("/auth/users/register", user)
@@ -46,6 +49,8 @@ export const UserSignup = () => {
                     username: ""
 
                 })
+                props.history.push('/workerslist');
+                window.location.reload(false);
 
             })
             .catch(err => {

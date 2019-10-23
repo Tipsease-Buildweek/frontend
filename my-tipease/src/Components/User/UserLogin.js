@@ -12,7 +12,8 @@ import {
     CardOptionsItem,
     CardOptions,
     CardButton,
-    CardLink
+    CardLink,
+    CardBox
 } from "./UserCard";
 import '../../App.css';
 
@@ -21,13 +22,15 @@ import '../../App.css';
 const UserLogin = (props) => {
     const [credentials, setCredentials] = useState({});
 
+
     const login = e => {
         e.preventDefault();
+
         axiosWithAuth().post("/auth/users/login", credentials)
             .then(res => {
                 console.log("login res: ", res)
                 localStorage.setItem('token', res.data.token);
-                props.history.push('/WorkersList');
+                props.history.push('/workerslist');
             })
     }
     const handleChange = e => {
@@ -67,24 +70,13 @@ const UserLogin = (props) => {
                             <CardIcon className="fa fa-eye" eye small />
                         </CardFieldset>
                         <CardFieldset>
-                            <CardInput
+                            <CardBox
                                 name="isServiceWorker"
-                                type="radio"
+                                type="checkbox"
                                 value={credentials.isServiceWorker}
                                 onChange={handleChange}
                                 required />
                             <label for="isServiceWorker">Service Worker</label>
-                        </CardFieldset>
-
-                        <CardFieldset>
-                            <CardInput
-                                // id="isNotServiceWorker"
-                                name="isNotServiceWorker"
-                                type="radio"
-                                value={credentials.isNotServiceWorker}
-                                onChange={handleChange}
-                                required />
-                            <label for="isNotServiceWorker">Non Service Worker</label>
                         </CardFieldset>
 
                         <CardFieldset>
@@ -107,15 +99,15 @@ const UserLogin = (props) => {
                         <CardFieldset>
                             <CardButton type="submit">Log in </CardButton>
                         </CardFieldset>
-                        <CardFieldset>
+                        {/* <CardFieldset>
                             <CardButton onClick={() => {
                                 setCredentials(false)
                                 localStorage.removeItem("token");
                             }}>Logout</CardButton>
-                        </CardFieldset>
+                        </CardFieldset> */}
                         <CardFieldset>
                             <CardLink>
-                                <Link to="/UserSignup">Don't have an account yet?</Link>
+                                <Link to="/usersignup">Don't have an account yet?</Link>
                             </CardLink>
                         </CardFieldset>
                     </CardBody>
