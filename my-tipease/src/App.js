@@ -31,14 +31,14 @@ function App() {
   return (
     <div className="App">
       <Popup
-      modal
-      overlayStyle={{ background: "rgba(255,255,255,0.98" }}
-      contentStyle={contentStyle}
-      closeOnDocumentClick={false}
-      trigger={open => <BurgerIcon open={open} />}
-    >
-      {close => <Menu close={close} />}
-    </Popup>
+        modal
+        overlayStyle={{ background: "rgba(255,255,255,0.98" }}
+        contentStyle={contentStyle}
+        closeOnDocumentClick={false}
+        trigger={open => <BurgerIcon open={open} />}
+      >
+        {close => <Menu close={close} />}
+      </Popup>
       {/* <Navlink /> */}
       <TipRoutes />
     </div>

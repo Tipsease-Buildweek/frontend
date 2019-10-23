@@ -10,14 +10,13 @@ import WorkersCard from "./WorkersCard";
 const TipRoutes = () => {
     return (
         <div>
-            {/* <Route exact path="/" component={UserSignup} /> */}
-            <Route path="/UserLogin" component={UserLogin} />
-            <Route path="/UserSignup" component={UserSignup} />
-            <PrivateRoute path="/WorkersList" component={WorkersList} />
-            <PrivateRoute path="/WorkersCard" component={WorkersCard} />
+            <Route exact path="/" component={WorkersList} />
+            <Route path="/userlogin" component={UserLogin} />
+            <Route path="/usersignup" component={UserSignup} />
+            <PrivateRoute path="/workerslist" component={WorkersList} />
             {/* <PrivateRoute path="/WorkersDetail" component={WorkersDetail} /> */}
-            <PrivateRoute path="/WorkersDetail/:id" component={WorkersDetail} />
-            
+            <PrivateRoute path="/workersdetail/:id" component={WorkersDetail} />
+
         </div>
     )
 }

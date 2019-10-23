@@ -11,6 +11,13 @@ export const CardWrapper = styled.div`
   border-radius: 5px;
 `;
 
+export const CardBox = styled.input`
+  display: inline-block;
+  vertical-align: middle;
+  border: 2px solid black;
+  margin: 2em;
+ `
+
 export const CardHeader = styled.header`
   padding-top: 32px;
   padding-bottom: 32px;
@@ -30,12 +37,10 @@ export const CardBody = styled.div`
 export const CardFieldset = styled.fieldset`
   position: relative;
   padding: 0;
-  margin: 0;
+  margin: 2px;
   border: 0;
 
-  & + & {
-    margin-top: 24px;
-  }
+  
 
   &:nth-last-of-type(2) {
     margin-top: 32px;
@@ -74,22 +79,22 @@ export const CardIcon = styled.span`
   }
 
   ${props =>
-        props.big &&
-        css`
+    props.big &&
+    css`
       font-size: 26px;
     `}
 
   ${props =>
-        props.eye &&
-        css`
+    props.eye &&
+    css`
       position: absolute;
       top: 8px;
       right: 0;
     `}
 
   ${props =>
-        props.small &&
-        css`
+    props.small &&
+    css`
       font-size: 14px;
     `}
 `;
@@ -132,6 +137,7 @@ export const CardButton = styled.button`
   background-color: #e5195f;
   border: 0;
   border-radius: 35px;
+  margin-bottom: 2em;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
