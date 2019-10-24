@@ -4,7 +4,8 @@ export const CardWrapper = styled.div`
   overflow: hidden;
   padding: 0 0 32px;
   margin: 48px auto 0;
-  width: 450px;
+  max-width: 500px;
+  min-width:300px;
   font-family: Quicksand, arial, sans-serif;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0px 40px rgba(0, 0, 0, 0.08);
   border-radius: 15px;
@@ -19,15 +20,15 @@ export const CardHeader = styled.header`
   padding-bottom: 32px;
 `;
 
-// export const CardHeading = styled.h1`
-//   font-size: 24px;
-//   font-weight: bold;
-//   text-align: center;
-// `;
+
 export const CardHeading = styled.p`
-  font-size: 24px;
+  font-size: 1.5rem;
   
   text-align: center;
+  @media (max-width: 500px) {
+    font-size:1.1rem;
+    
+  }
 `;
 export const CardBody = styled.div`
   // padding-right: 32px;
@@ -92,7 +93,7 @@ export const CardOptionsNote = styled.small`
 
 export const CardButton = styled.button`
   
-  width: 70%;
+  width: 60%;
   padding: 12px 0;
   font-family: inherit;
   font-size: 14px;

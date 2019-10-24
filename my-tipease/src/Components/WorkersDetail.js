@@ -13,6 +13,7 @@ import {axiosWithAuth} from '../Utils/axiosWithAuth';
 
 function WorkersDetail(props) {
   const [worker, setWorker] = useState();
+  
   useEffect(() => {
     const id = Number(props.match.params.id);
    
@@ -25,7 +26,7 @@ function WorkersDetail(props) {
     
   }, [props.match.params.id]);
 
-  console.log(worker);
+  
   if (!worker) {
     return <p>Loading data...</p>
   }
@@ -37,7 +38,7 @@ function WorkersDetail(props) {
         </CardHeader>
         <CardBody>
          <CardFieldset>         
-           <CardIcon src={worker.photoUrl} alt="emplyee picture"/> 
+           <CardIcon src={worker.photoUrl} alt="emplyee picture"/>           
          </CardFieldset>
 
           <CardFieldset>
