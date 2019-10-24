@@ -8,14 +8,16 @@ import WorkersList from './WorkersList';
 import WorkersCard from './WorkersCard';
 
 const TipRoutes = () => {
-  return (
-    <div>
-      <PrivateRoute exact path='/' component={WorkersList} />
-      <Route path='/userlogin' component={UserLogin} />
-      <Route path='/usersignup' component={UserSignup} />
-      <PrivateRoute path='/workersdetail/:id' component={WorkersDetail} />
-    </div>
-  );
-};
+    return (
+        <div>
+            <PrivateRoute exact path="/" component={WorkersList} /> 
+            <Route path="/userlogin" component={UserLogin} /> 
+            <Route path="/usersignup" component={UserSignup} /> 
+            <PrivateRoute path="/workersdetail/:id" component={WorkersDetail} />
 
-export default TipRoutes;
+        </div>
+    )
+}
+
+export default TipRoutes
+
