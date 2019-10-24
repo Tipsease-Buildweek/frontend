@@ -15,7 +15,7 @@ function WorkersDetail(props) {
   const [worker, setWorker] = useState();
   useEffect(() => {
     const id = Number(props.match.params.id);
-    
+   
     axiosWithAuth().get(`/serviceWorkers/${id}`)
       .then(res =>{
         
@@ -25,9 +25,9 @@ function WorkersDetail(props) {
     
   }, [props.match.params.id]);
 
-  
+  console.log(worker);
   if (!worker) {
-    return <p><br><br></br></br>Loading data...</p>
+    return <p>Loading data...</p>
   }
   return (
     <div className="Details">

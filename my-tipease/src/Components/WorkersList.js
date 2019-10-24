@@ -54,6 +54,10 @@ display:flex;
 justify-content:space-evenly;
 
 `
+const LoadingError=styled.p`
+
+margin:100px
+`
 
 
 export default function WorkersList() {
@@ -71,7 +75,7 @@ export default function WorkersList() {
   }, []);
 
   if (!workerList) {
-    return <p><br></br><br></br>Loading data...</p>
+    return <LoadingError>Loading data...</LoadingError>
   }
   
   const searchOnChange = (e) => {

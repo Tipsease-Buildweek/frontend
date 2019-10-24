@@ -30,7 +30,7 @@ const UserLogin = (props) => {
             .then(res => {
                 console.log("login res: ", res)
                 localStorage.setItem('token', res.data.token);
-                props.history.push('/workerslist');
+                props.history.push('/');
             })
     }
     const handleChange = e => {
