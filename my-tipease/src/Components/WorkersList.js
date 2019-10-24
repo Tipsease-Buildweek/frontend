@@ -60,12 +60,7 @@ const PageHeader = styled.h1`
     margin-top:40px;
   }
   
-
-`
- 
-                
-                
- 
+` 
 
 
 
@@ -73,12 +68,9 @@ const Header = styled.div`
 display:flex;
 justify-content:space-evenly;
 
-  
-
-
 `
-const LoadingError=styled.p`
 
+const LoadingError=styled.p`
 margin:100px
 `
 

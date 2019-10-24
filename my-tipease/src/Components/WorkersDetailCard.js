@@ -31,9 +31,7 @@ export const CardHeading = styled.p`
   }
 `;
 export const CardBody = styled.div`
-  // padding-right: 32px;
-  // padding-left: 32px;
-  // max-width: 80%;
+  
   text-align:center;
 `;
 
