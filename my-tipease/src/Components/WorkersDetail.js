@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useEffect, useState } from "react";
 import {
   CardWrapper,
   CardHeader,
@@ -6,40 +6,54 @@ import {
   CardBody,
   CardIcon,
   CardFieldset,
-  CardOptionsItem,
-  CardOptions,
   CardOptionsNote,
   CardButton,
 } from "./WorkersDetailCard";
+import {axiosWithAuth} from '../Utils/axiosWithAuth';
 
+function WorkersDetail(props) {
+  const [worker, setWorker] = useState();
+  useEffect(() => {
+    const id = Number(props.match.params.id);
+    
+    axiosWithAuth().get(`/serviceWorkers/${id}`)
+      .then(res =>{
+        
+        setWorker(res.data)
+      })
+      .catch(err => console.log('Error: ', err));
+    
+  }, [props.match.params.id]);
 
-function WorkersDetail() {
+  
+  if (!worker) {
+    return <p><br><br></br></br>Loading data...</p>
+  }
   return (
     <div className="Details">
-      <CardWrapper>
+     <CardWrapper>
         <CardHeader>
-          <CardHeading>Get To Know 'Kayla'</CardHeading>
+          <CardHeading>Get To Know <b><i>{worker.fullName}</i></b></CardHeading>
         </CardHeader>
-
         <CardBody>
-        <CardFieldset>
-          <CardIcon>PHOTO</CardIcon>
+         <CardFieldset>         
+           <CardIcon src={worker.photoUrl} alt="emplyee picture"/> 
+         </CardFieldset>
+
+          <CardFieldset>
+            <CardOptionsNote><b>Years of Service:</b> {worker.timeAtJob}</CardOptionsNote>
           </CardFieldset>
 
           <CardFieldset>
-          <CardOptionsNote>Tenure</CardOptionsNote>
+            <CardOptionsNote>{worker.serviceType}</CardOptionsNote>
           </CardFieldset>
 
           <CardFieldset>
-          <CardOptionsNote>Role</CardOptionsNote>
+            <CardOptionsNote>{worker.tagline}</CardOptionsNote>
           </CardFieldset>
 
           <CardFieldset>
-          <CardOptionsNote>Tagline</CardOptionsNote>
-          </CardFieldset>
-
-          <CardFieldset>
-            <CardButton type="button">Send Tip</CardButton>
+            <CardButton type="button">Add Tip</CardButton>
           </CardFieldset>
          
         </CardBody>

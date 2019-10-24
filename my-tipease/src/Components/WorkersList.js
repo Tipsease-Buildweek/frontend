@@ -28,21 +28,21 @@ padding:10px;
 
 `
 
-const animationName = keyframes`
+const animationHeader = keyframes`
 0%{		color: red;	}
-49%{	color: green;	}
-50%{	color: yello;	}
+50%{	color: green;	}
 99%{	color:white;	}
-100%{	color: pink;	}
+100%{	color: gray;	}
+
   
 `
 
-const PageHeader = styled.h1`
 
+const PageHeader = styled.h1`
 color:lightgray;
 font-size:3rem;
 text-align:left;
-animation: ${animationName} 1s infinite;
+animation: ${animationHeader} 1s infinite;
 text-shadow: 10px 3px 3px navy,
                 3px 3px 3px navy, 
                 3px 3px 3px  navy;
@@ -56,11 +56,6 @@ justify-content:space-evenly;
 `
 
 
-
-    
-    
-
-
 export default function WorkersList() {
   const [workerList, setWorkerList] = useState([]);
   const [workerSearch, setWorkerSearch] = useState('');
@@ -68,7 +63,7 @@ export default function WorkersList() {
   useEffect(() => {
     axiosWithAuth().get('/serviceWorkers')
       .then(res =>{
-        console.log(res);
+        
         setWorkerList(res.data)
       })
       .catch(err => console.log('Error: ', err));
@@ -76,9 +71,9 @@ export default function WorkersList() {
   }, []);
 
   if (!workerList) {
-    return <p>Loading data...</p>
+    return <p><br></br><br></br>Loading data...</p>
   }
-  console.log(workerList)
+  
   const searchOnChange = (e) => {
     setWorkerSearch(e.target.value);
   }
@@ -90,22 +85,17 @@ export default function WorkersList() {
 
   return (
     <Container>
-    <Header>
-    <PageHeader>Meet Our Employees</PageHeader>
-    
-      <SearchName>
-      
-      {/* <span><i className="fa fa-search"></i></span> */}
-      
-      <input className="inputSearch"
-        
-        type="text"
-        placeholder="Search Employee..." 
-        value={workerSearch}
-        onChange={searchOnChange}
-       
-      />
-      </SearchName>
+      <Header>
+        <PageHeader>Meet Our Employees</PageHeader>
+        <SearchName>
+          <input className="inputSearch"
+            type="text"
+            placeholder="Search Employee..." 
+            value={workerSearch}
+            onChange={searchOnChange}
+          
+          />
+        </SearchName>
       </Header>
       <ListCards>      
         {filteredList.map((worker) => 

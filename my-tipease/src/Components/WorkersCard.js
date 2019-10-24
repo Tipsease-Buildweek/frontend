@@ -11,6 +11,7 @@ width:300px;
 height:300px;
 margin: 2% auto
 color:darkblue;
+border-radius:15px;
 border:1px solid blue;
 background-image: url(${photoUrl});
 background-repeat: no-repeat;
@@ -29,7 +30,7 @@ padding-left:5%;
     
    
       
-    <NavLink className="workersCard" to={`/WorkersDetail/${id}`}>
+    <NavLink className="workersCard" to={`/workersdetail/${id}`}>
       <DisplayCard>
         
         
