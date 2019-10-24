@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-import axios from 'axios';
+import {axiosWithAuth} from '../Utils/axiosWithAuth';
 import styled,{keyframes} from 'styled-components';
-import data from '../data.js';
+
 import WorkersCard from './WorkersCard';
 
 
@@ -28,21 +28,21 @@ padding:10px;
 
 `
 
-const animationName = keyframes`
+const animationHeader = keyframes`
 0%{		color: red;	}
-49%{	color: green;	}
-50%{	color: yello;	}
+50%{	color: green;	}
 99%{	color:white;	}
-100%{	color: pink;	}
+100%{	color: gray;	}
+
   
 `
 
-const PageHeader = styled.h1`
 
+const PageHeader = styled.h1`
 color:lightgray;
 font-size:3rem;
 text-align:left;
-animation: ${animationName} 1s infinite;
+animation: ${animationHeader} 1s infinite;
 text-shadow: 10px 3px 3px navy,
                 3px 3px 3px navy, 
                 3px 3px 3px  navy;
@@ -54,11 +54,10 @@ display:flex;
 justify-content:space-evenly;
 
 `
+const LoadingError=styled.p`
 
-
-
-    
-    
+margin:100px
+`
 
 
 export default function WorkersList() {
@@ -66,19 +65,19 @@ export default function WorkersList() {
   const [workerSearch, setWorkerSearch] = useState('');
 
   useEffect(() => {
-    // axios.get('https://build-tipsease.herokuapp.com/serviceWorkers')
-    //   .then(res =>{
+    axiosWithAuth().get('/serviceWorkers')
+      .then(res =>{
         
-    //     setWorkerList(res.data.results)
-    //   })
-    //   .catch(err => console.log('Error: ', err));
-     setWorkerList(data);
+        setWorkerList(res.data)
+      })
+      .catch(err => console.log('Error: ', err));
+    
   }, []);
 
   if (!workerList) {
-    return <p>Loading data...</p>
+    return <LoadingError>Loading data...</LoadingError>
   }
-  console.log(workerList)
+  
   const searchOnChange = (e) => {
     setWorkerSearch(e.target.value);
   }
@@ -90,22 +89,17 @@ export default function WorkersList() {
 
   return (
     <Container>
-    <Header>
-    <PageHeader>Meet Our Employees</PageHeader>
-    
-      <SearchName>
-      
-      {/* <span><i className="fa fa-search"></i></span> */}
-      
-      <input className="inputSearch"
-        
-        type="text"
-        placeholder="Search Employee..." 
-        value={workerSearch}
-        onChange={searchOnChange}
-       
-      />
-      </SearchName>
+      <Header>
+        <PageHeader>Meet Our Employees</PageHeader>
+        <SearchName>
+          <input className="inputSearch"
+            type="text"
+            placeholder="Search Employee..." 
+            value={workerSearch}
+            onChange={searchOnChange}
+          
+          />
+        </SearchName>
       </Header>
       <ListCards>      
         {filteredList.map((worker) => 
