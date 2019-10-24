@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/62b7b37c-5df1-4507-a6fc-c573d014d73b/deploy-status)](https://app.netlify.com/sites/tipsease-bw/deploys)
+
 # frontend
 
 Proposal
