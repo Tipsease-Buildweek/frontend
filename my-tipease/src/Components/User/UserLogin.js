@@ -75,7 +75,7 @@ const UserLogin = (props) => {
                                 type="checkbox"
                                 value={credentials.isServiceWorker}
                                 onChange={handleChange}
-                                required />
+                            />
                             <label for="isServiceWorker">Service Worker</label>
                         </CardFieldset>
 
