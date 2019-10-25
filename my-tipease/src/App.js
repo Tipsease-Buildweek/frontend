@@ -11,6 +11,7 @@ import BurgerIcon from "./Components/Nav/BurgerIcon";
 import Menu from "./Components/Nav/Menu";
 import "./index.css";
 
+
 const styles = {
   fontFamily: "sans-serif",
   textAlign: "center",

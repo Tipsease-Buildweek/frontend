@@ -10,7 +10,7 @@ import {
   CardButton,
 } from "./WorkersDetailCard";
 import {axiosWithAuth} from '../Utils/axiosWithAuth';
-
+import Results from '../Components/Rating/Results';
 function WorkersDetail(props) {
   const [worker, setWorker] = useState();
   
@@ -56,6 +56,7 @@ function WorkersDetail(props) {
           <CardFieldset>
             <CardButton type="button">Add Tip</CardButton>
           </CardFieldset>
+          <Results/>
          
         </CardBody>
       </CardWrapper>
