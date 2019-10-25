@@ -24,38 +24,53 @@ const SearchName = styled.div`
 width: 180px;
 height: 28px;
 margin-top:4%
+margin-left:2%;
 padding:10px;
 
 `
 
 const animationHeader = keyframes`
-0%{		color: red;	}
-50%{	color: green;	}
-99%{	color:white;	}
-100%{	color: gray;	}
 
+from {
+  width:0;
+}         
+to {
+  width:20ch;
+}  
   
 `
 
 
 const PageHeader = styled.h1`
-color:lightgray;
-font-size:3rem;
-text-align:left;
-animation: ${animationHeader} 1s infinite;
-text-shadow: 10px 3px 3px navy,
-                3px 3px 3px navy, 
-                3px 3px 3px  navy;
-                
-`    
-    
+
+ 
+  color: lightgray;
+  font-size:3rem;
+  text-align: center;
+  
+  text-shadow: 3px 3px 3px darkblue,
+                3px 3px 3px darkblue, 
+                3px 3px 3px  darkblue;
+  
+  animation:${animationHeader}   2s steps(18) ;
+  overflow:hidden
+  white-space: nowrap;
+  @media (max-width: 500px) {
+    font-size:1.4rem;
+    margin-top:40px;
+  }
+  
+` 
+
+
+
 const Header = styled.div`
 display:flex;
 justify-content:space-evenly;
 
 `
-const LoadingError=styled.p`
 
+const LoadingError=styled.p`
 margin:100px
 `
 
@@ -91,7 +106,9 @@ export default function WorkersList() {
     <Container>
       <Header>
         <PageHeader>Meet Our Employees</PageHeader>
-        <SearchName>
+        
+      </Header>
+      <SearchName>
           <input className="inputSearch"
             type="text"
             placeholder="Search Employee..." 
@@ -100,7 +117,6 @@ export default function WorkersList() {
           
           />
         </SearchName>
-      </Header>
       <ListCards>      
         {filteredList.map((worker) => 
           
