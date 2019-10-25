@@ -1,11 +1,6 @@
 import React from 'react';
 import './App.css';
 import { UserSignup } from "./Components/User/UserSignup";
-<<<<<<< HEAD
-import { Routes } from "react-router-dom";
-// import Navlink from './Components/NavLink';
-=======
->>>>>>> cc055c57f4423771b14a31cf78441f1939ee8912
 import User from './Components/User/User';
 import TipRoutes from "./Components/Routes";
 import UserLogin from "./Components/User/UserLogin";
@@ -15,6 +10,7 @@ import Hello from "./Components/Nav/Hello";
 import BurgerIcon from "./Components/Nav/BurgerIcon";
 import Menu from "./Components/Nav/Menu";
 import "./index.css";
+
 
 const styles = {
   fontFamily: "sans-serif",

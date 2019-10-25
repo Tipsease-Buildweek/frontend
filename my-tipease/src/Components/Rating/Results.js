@@ -1,17 +1,44 @@
-import axios from "axios";
+import React from 'react';
+import { Field, reduxForm } from 'redux-form';
 
-const Results = id => {
-  axios
-    .put(`https://build-tipsease.herokuapp.com/serviceWorkers/rate/${id}`)
-    .then(res => console.log(response))
-    .catch(err => console.log(err));
-
+const Results = props => {
+  const { handleSubmit, pristine, reset, submitting } = props;
   return (
-    <div>
-      <h2>Thank you for using Tipease!</h2>
-      <h3>We appreciate your feedback</h3>
-    </div>
+    <form onSubmit={handleSubmit}>
+    
+      <div>
+        <label>Rating</label>
+        <div>
+          <label>
+            <Field name="rating" component="input" type="radio" value="good" />
+            {' '}
+            Good
+          </label>
+          <label>
+            <Field name="rating" component="input" type="radio" value="poor" />
+            {' '}
+            Poor
+          </label>
+        </div>
+      </div>
+  
+    
+      <div>
+        <label>Comments</label>
+        <div>
+          <Field name="comments" component="textarea" />
+        </div>
+      </div>
+      <div>
+        <button type="submit" disabled={pristine || submitting}>Submit</button>
+        <button type="button" disabled={pristine || submitting} onClick={reset}>
+          Undo
+        </button>
+      </div>
+    </form>
   );
 };
 
-export default Results;
+export default reduxForm({
+  form: 'feedback',
+})(Results);
