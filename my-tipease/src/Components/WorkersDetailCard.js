@@ -72,8 +72,8 @@ export const CardInput = styled.input`
 `;
 
 export const CardIcon = styled.img`
-width:300px;
-height:300px;
+width:200px;
+height:200px;
 border-radius:50%;
 
 `
@@ -91,7 +91,7 @@ export const CardOptionsNote = styled.small`
 
 export const CardButton = styled.button`
   
-  width: 60%;
+  width: 50%;
   padding: 12px 0;
   font-family: inherit;
   font-size: 14px;
