@@ -13,7 +13,7 @@ import {axiosWithAuth} from '../Utils/axiosWithAuth';
 import Results from '../Components/Rating/Results';
 function WorkersDetail(props) {
   const [worker, setWorker] = useState();
-  
+  let photoUrlTest ="https://avatars0.githubusercontent.com/u/50642099?s=400&u=203a21c32a0f3c3bba312c6e7c3bf73ef8f5a186&v=4"
   useEffect(() => {
     const id = Number(props.match.params.id);
    
@@ -38,7 +38,8 @@ function WorkersDetail(props) {
         </CardHeader>
         <CardBody>
          <CardFieldset>         
-           <CardIcon src={worker.photoUrl} alt="emplyee picture"/>           
+           {/* <CardIcon src={worker.photoUrl} alt="emplyee picture"/>         */}
+           <CardIcon src={photoUrlTest} alt="employee picture"/>       
          </CardFieldset>
 
           <CardFieldset>
